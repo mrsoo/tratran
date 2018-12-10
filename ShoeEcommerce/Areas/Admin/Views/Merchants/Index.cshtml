@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ShoeEcommerce.Model.Users.Merchant>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.lstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.storename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.website)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.lstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.storename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.website)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idMerchant">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idMerchant">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idMerchant">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,184 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <DockerTargetOS>Windows</DockerTargetOS>
+    <UserSecretsId>f44622ae-e70e-46d7-8b94-e04f6ea50cdf</UserSecretsId>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
+    <Compile Remove="ClientApp\**" />
+    <Compile Remove="Infrastructure\**" />
+    <Content Remove="%2a%2a\**" />
+    <Content Remove="ClientApp\**" />
+    <Content Remove="Infrastructure\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
+    <EmbeddedResource Remove="Infrastructure\**" />
+    <None Remove="%2a%2a\**" />
+    <None Remove="ClientApp\**" />
+    <None Remove="Infrastructure\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShoeEcommerce.Common\ShoeEcommerce.Common.csproj" />
+    <ProjectReference Include="..\ShoeEcommerce.Data\ShoeEcommerce.Data.csproj" />
+    <ProjectReference Include="..\ShoeEcommerce.Model\ShoeEcommerce.Model.csproj" />
+    <ProjectReference Include="..\ShoeEcommerce.Service\ShoeEcommerce.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Customer\Data\" />
+    <Folder Include="Areas\Customer\Models\" />
+    <Folder Include="Areas\Merchant\Data\" />
+    <Folder Include="Areas\Merchant\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Admin\lib\advanced-datatable\images\Sorting icons.psd" />
+    <None Include="wwwroot\Admin\lib\advanced-datatable\js\DT_bootstrap.js" />
+    <None Include="wwwroot\Admin\lib\advanced-datatable\js\jquery.dataTables.js" />
+    <None Include="wwwroot\Admin\lib\advanced-datatable\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\Admin\lib\advanced-datatable\js\jquery.js" />
+    <None Include="wwwroot\Admin\lib\advanced-form-components.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-daterangepicker\date.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-daterangepicker\moment.min.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-switch.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\Admin\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\Admin\lib\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\Admin\lib\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\Admin\lib\calendar-conf-events.js" />
+    <None Include="wwwroot\Admin\lib\chart-master\Chart.js" />
+    <None Include="wwwroot\Admin\lib\chartjs-conf.js" />
+    <None Include="wwwroot\Admin\lib\ckeditor\ckeditor.js" />
+    <None Include="wwwroot\Admin\lib\common-scripts.js" />
+    <None Include="wwwroot\Admin\lib\dropzone\dropzone.js" />
+    <None Include="wwwroot\Admin\lib\easy-pie-chart.js" />
+    <None Include="wwwroot\Admin\lib\fancybox\jquery.fancybox.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\cors\jquery.xdr-transport.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload-audio.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload-image.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload-process.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload-ui.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload-validate.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload-video.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.fileupload.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\jquery.iframe-transport.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\main.js" />
+    <None Include="wwwroot\Admin\lib\file-uploader\js\vendor\jquery.ui.widget.js" />
+    <None Include="wwwroot\Admin\lib\flotchart-conf.js" />
+    <None Include="wwwroot\Admin\lib\flot\jquery.flot.crosshair.js" />
+    <None Include="wwwroot\Admin\lib\flot\jquery.flot.js" />
+    <None Include="wwwroot\Admin\lib\flot\jquery.flot.pie.js" />
+    <None Include="wwwroot\Admin\lib\flot\jquery.flot.resize.js" />
+    <None Include="wwwroot\Admin\lib\flot\jquery.flot.stack.js" />
+    <None Include="wwwroot\Admin\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\Admin\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\Admin\lib\form-component.js" />
+    <None Include="wwwroot\Admin\lib\form-validation-script.js" />
+    <None Include="wwwroot\Admin\lib\fullcalendar\fullcalendar.min.js" />
+    <None Include="wwwroot\Admin\lib\google-maps\data\points.js" />
+    <None Include="wwwroot\Admin\lib\google-maps\maplace.js" />
+    <None Include="wwwroot\Admin\lib\gritter-conf.js" />
+    <None Include="wwwroot\Admin\lib\gritter\js\jquery.gritter.js" />
+    <None Include="wwwroot\Admin\lib\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <None Include="wwwroot\Admin\lib\jquery-ui-1.9.2.custom.min.js" />
+    <None Include="wwwroot\Admin\lib\jquery.backstretch.min.js" />
+    <None Include="wwwroot\Admin\lib\jquery.dcjqaccordion.2.7.js" />
+    <None Include="wwwroot\Admin\lib\jquery.nicescroll.js" />
+    <None Include="wwwroot\Admin\lib\jquery.scrollTo.min.js" />
+    <None Include="wwwroot\Admin\lib\jquery.sparkline.js" />
+    <None Include="wwwroot\Admin\lib\jquery.tagsinput.js" />
+    <None Include="wwwroot\Admin\lib\jquery.ui.touch-punch.min.js" />
+    <None Include="wwwroot\Admin\lib\jquery\jquery.js" />
+    <None Include="wwwroot\Admin\lib\jquery\jquery.min.js" />
+    <None Include="wwwroot\Admin\lib\morris-conf.js" />
+    <None Include="wwwroot\Admin\lib\morris\morris.min.js" />
+    <None Include="wwwroot\Admin\lib\php-mail-form\validate.js" />
+    <None Include="wwwroot\Admin\lib\raphael\raphael.min.js" />
+    <None Include="wwwroot\Admin\lib\sparkline-chart.js" />
+    <None Include="wwwroot\Admin\lib\tasks.js" />
+    <None Include="wwwroot\Admin\lib\xchart\d3.v3.min.js" />
+    <None Include="wwwroot\Admin\lib\xchart\xcharts.min.js" />
+    <None Include="wwwroot\Admin\lib\zabuto_calendar.js" />
+    <None Include="wwwroot\Client\assets\css\style.css.map" />
+    <None Include="wwwroot\Client\assets\css\style.scss" />
+    <None Include="wwwroot\Client\assets\css\_about.scss" />
+    <None Include="wwwroot\Client\assets\css\_banner-slide.scss" />
+    <None Include="wwwroot\Client\assets\css\_blog.scss" />
+    <None Include="wwwroot\Client\assets\css\_blogpost.scss" />
+    <None Include="wwwroot\Client\assets\css\_categories.scss" />
+    <None Include="wwwroot\Client\assets\css\_checkout.scss" />
+    <None Include="wwwroot\Client\assets\css\_contact.scss" />
+    <None Include="wwwroot\Client\assets\css\_detail.scss" />
+    <None Include="wwwroot\Client\assets\css\_footer.scss" />
+    <None Include="wwwroot\Client\assets\css\_header.scss" />
+    <None Include="wwwroot\Client\assets\css\_main.scss" />
+    <None Include="wwwroot\Client\assets\css\_padding-section.scss" />
+    <None Include="wwwroot\Client\assets\css\_params.scss" />
+    <None Include="wwwroot\Client\assets\css\_responsive.scss" />
+    <None Include="wwwroot\Client\assets\css\_shopingcart.scss" />
+    <None Include="wwwroot\Client\assets\fonts\Flaticon.svg" />
+    <None Include="wwwroot\Client\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\Client\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\Client\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\Client\assets\js\chosen.jquery.min.js" />
+    <None Include="wwwroot\Client\assets\js\frontend.js" />
+    <None Include="wwwroot\Client\assets\js\ie9.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.appear.min.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.bxslider.min.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.countdown.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.countTo.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.min.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.mmenu.all.min.js" />
+    <None Include="wwwroot\Client\assets\js\jquery.plugin.js" />
+    <None Include="wwwroot\Client\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\Client\assets\js\ui.js" />
+    <None Include="wwwroot\Client\assets\js\wow.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Admin\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Admin\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Customer\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Customer\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Merchant\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Merchant\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

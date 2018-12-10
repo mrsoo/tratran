@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Home v1</title>
+    <link rel='stylesheet' href='~/Client/assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/owl.carousel.min.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/animated.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/font-awesome.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/ui.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/jquery.mmenu.all.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/flaticon.css'>
+    <link rel='stylesheet' href='~/Client/assets/css/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i;Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+<body>
+    <header class="header header-style1">
+        <div class="header-top">
+            <div class="container">
+                <h5>future in your hand</h5>
+                <p>Enjoy the beautiful life with your family supply</p>
+                <a href="#" class="button orange">View Now</a>
+            </div>
+        </div>
+        <div class="header-mid">
+            <div class="container">
+                <div class="header-mid-left">
+                    <p class="wellcome-to">Wellcome to Shoes City</p>
+                    <p class="register-or-login">
+                        <a href="#" class="register">Register</a>
+                        or
+                        <a asp-controller="LogTool" asp-action="Login" class="login">Login</a>
+                    </p>
+                </div>
+                <div class="header-mid-right">
+                    <div class="header-mid-right-content">
+                        <a href="#">
+                            <i class="flaticon-user-outline"></i>
+                            My Account
+                        </a>
+                    </div>
+                    <div class="header-mid-right-content">
+                        <a href="#">
+                            <i class="flaticon-like"></i>
+                            My Wishlist
+                        </a>
+                    </div>
+                    <div class="header-mid-right-content">
+                        <a href="#">
+                            <i class="flaticon-check-square"></i>
+                            Check Out
+                        </a>
+                    </div>
+                    <div class="header-mid-right-content country-select-menu">
+                        <div class="country-select">
+                            <div class="country select">
+                                <img src="~/Client/assets/images/flag.jpg" alt="flag" width="24" height="17">
+                                English
+                            </div>
+                            <div class="country-dropdown">
+                                <div class="country">
+                                    <img src="~/Client/assets/images/flag2.jpg" alt="flag" width="24" height="17">
+                                    Hungary
+                                </div>
+                                <div class="country">
+                                    <img src="~/Client/assets/images/flag3.jpg" alt="flag" width="24" height="17">
+                                    German
+                                </div>
+                                <div class="country">
+                                    <img src="~/Client/assets/images/flag4.jpg" alt="flag" width="24" height="17">
+                                    French
+                                </div>
+                                <div class="country">
+                                    <img src="~/Client/assets/images/flag5.jpg" alt="flag" width="24" height="17">
+                                    Canada
+                                </div>
+                                <div class="country">
+                                    <img src="~/Client/assets/images/flag6.jpg" alt="flag" width="24" height="17">
+                                    Australia
+                                </div>
+                            </div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+
+                    </div>
+                    <div class="header-mid-right-content money-select-menu">
+                        <div class="money-select">
+                            <div class="money select">
+                                USD
+                            </div>
+                            <div class="money-dropdown">
+                                <div class="money">
+                                    EGP
+                                </div>
+                                <div class="money">
+                                    EURO
+                                </div>
+                                <div class="money">
+                                    USD
+                                </div>
+
+                            </div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-bottom-left">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img src="~/Client/assets/images/logo.png" alt="logo">
+                        </a>
+                    </h1>
+                    <partial name="~/Views/Share/_Search.cshtml" />
+                </div>
+                <div class="header-bottom-right">
+                    <div class="header-bottom-right-content">
+                        <a href="#">
+                            <i class="flaticon-like"></i>
+                            Favorites
+                        </a>
+                    </div>
+                    <partial name="~/Views/Share/_ShoppingCart.cshtml" />
+                </div>
+            </div>
+        </div>
+        <div class="menu-primary">
+            <div class="container">
+                <a href="#categories-menu" class="menu-button categories-menu-button">
+                    Categories<span class="flaticon-bars"></span>
+                </a>
+                <partial name="~/Views/Share/_NavCategory.cshtml" />
+                <a href="#primary-navigation" class="menu-button primary-navigation-button">
+                    <span class="flaticon-bars"></span>Main Menu
+                </a>
+                <partial name="~/Views/Share/_NavPrimary.cshtml" />
+            </div>
+        </div>
+    </header>
+    @RenderSection("ScriptsSlider", required: false)
+    <div class="main-content">
+        @RenderBody()
+        <partial name="~/Views/Share/_Info.cshtml" />
+    </div>
+    <partial name="~/Views/Share/_Footer.cshtml" />
+
+    <script type='text/javascript' src='~/Client/assets/js/jquery.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/wow.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/owl.carousel.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/jquery.appear.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/jquery.countTo.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/ui.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/jquery.bxslider.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/jquery.mmenu.all.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/chosen.jquery.min.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/jquery.countdown.js'></script>
+    <script type='text/javascript' src='~/Client/assets/js/frontend.js'></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model ShoeEcommerce.Model.Accounts.Account
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.passwd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.passwd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.avt_path)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.avt_path)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.rate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.rate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.rankVip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.rankVip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Merchant)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Merchant.idMerchant)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.idCustomer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idAccount">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

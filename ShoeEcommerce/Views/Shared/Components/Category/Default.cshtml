@@ -1,0 +1,25 @@
+﻿ @model IEnumerable<ShoeEcommerce.Model.Products.Category>
+<ul class="nav nav-pills">
+    @{
+        var dem = 1;
+        var b = 'b';
+        @foreach (var item in Model)
+        {
+            <li class="active"><a href="#@dem@b" data-toggle="tab">@item.nameCategory</a></li>
+            break;
+        }
+
+        var SubModel = Model.Skip(1);
+        foreach (var item in SubModel)
+        {
+            dem++;
+            <li><a href="#@dem@b" data-toggle="tab">@item.nameCategory</a></li>
+        }
+    }
+
+
+    @*<li class="active"><a href="#1b" data-toggle="tab">Samsung</a></li>
+        <li><a href="#2b" data-toggle="tab">Apple</a></li>
+        <li><a href="#3b" data-toggle="tab">Nokia</a></li>
+        <li><a href="#4b" data-toggle="tab">Oppo</a></li>*@
+</ul>

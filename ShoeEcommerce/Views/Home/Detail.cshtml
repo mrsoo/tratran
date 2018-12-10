@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Share/LayoutClientDetail.cshtml";
+}
+
+<div class="container">
+    @await Component.InvokeAsync("Breadcum")
+
+    @await Component.InvokeAsync("ProductDetail", new { id = ViewBag.id })
+
+    @await Component.InvokeAsync("ProductDetailMore")
+
+    @await Component.InvokeAsync("RelatedProduct")
+
+    @await Component.InvokeAsync("UpSell")
+
+</div>

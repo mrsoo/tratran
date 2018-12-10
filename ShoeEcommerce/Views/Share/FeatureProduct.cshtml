@@ -1,0 +1,378 @@
+﻿@model IEnumerable<ShoeEcommerce.Model.Products.Category>
+<section id="section1">
+    <div class="container">
+        <!-- Feature Products Category-->
+        <div class="feature-products-category product-tabs tabs-slide">
+            <h5 class="tab-title">Feature products</h5>
+            <ul class="nav nav-pills">
+                <li class="active">
+                    <a href="#1a" data-toggle="tab">Accessories</a>
+                </li>
+                <li>
+                    <a href="#2a" data-toggle="tab">Smartphone</a>
+                </li>
+                <li>
+                    <a href="#3a" data-toggle="tab">Electronics</a>
+                </li>
+                <li>
+                    <a href="#4a" data-toggle="tab">Watches & Shoes</a>
+                </li>
+            </ul>
+            <div class="product-tabs-content tab-content clearfix">
+                <div class="tab-pane active" id="1a">
+                    <div class="featue-slide supermartket-owl-carousel" data-number="5" data-margin="30" data-navcontrol="yes" data-dots="yes">
+                        @foreach (var item in Model)
+                        {
+                        <div class="product-list-content">
+                            <div class="product-item">
+
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f1.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">@item.nameCategory</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                            @*<li>@book.Title - @book.Author (@book.Price.ToString("c"))</li>*@
+                        }
+                        
+                        @*<div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f2.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f4.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f5.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f1.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <div class="tab-pane" id="2a">
+                    <div class="featue-slide supermartket-owl-carousel" data-number="5" data-margin="30" data-navcontrol="yes">
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f5.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f4.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f4.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f5.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="3a">
+                    <div class="featue-slide supermartket-owl-carousel" data-number="5" data-margin="30" data-navcontrol="yes">
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f5.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f4.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f5.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="4a">
+                    <div class="featue-slide supermartket-owl-carousel" data-number="5" data-margin="30" data-navcontrol="yes">
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f2.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f2.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f4.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f5.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-item">
+                                <div class="product-media">
+                                    <figure><a href="#"><img src="~/Client/assets/images/f3.jpg" alt="feature" width="200" height="238"></a></figure>
+                                </div>
+                                <a href="#" class="feature-slide-name">Beatvs Solo2 On-Ear</a>
+                                <p class="feature-slide-cost">From <span class="price">$168.00</span></p>
+                                <ul class="product-item-actions">
+                                    <li><a href="#"><i class="flaticon-like"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                                    <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

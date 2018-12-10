@@ -1,0 +1,154 @@
+﻿@model IEnumerable<ShoeEcommerce.Model.AdminManager.RegisterNotify>
+
+@{
+    ViewData["Title"] = "Thông báo kiểm duyệt";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+@if (!string.IsNullOrEmpty((string)TempData["meslogin"]))
+{
+    var str = (string)TempData["meslogin"];
+    <script type="text/javascript">
+
+        function myfunction(mes) {
+            alert(mes);
+        }
+        myfunction("Yêu cầu đăng nhập để thực hiện thao tác này");
+    </script>
+}
+@if (!string.IsNullOrEmpty((string)TempData["mes"]))
+{
+    var str = (string)TempData["mes"];
+    <script type="text/javascript">
+
+        function myfunction(mes) {
+            alert(mes);
+        }
+        myfunction("Duyệt đơn không thành công");
+    </script>
+}
+
+<div class="">
+
+    <div class="panel panel-body panel-primary">
+        <div class="title title-block">
+            <center>
+                <h2>
+                    <b class="text text-primary">DANH SÁCH YÊU CẦU KIỂM DUYỆT TỪ PHÍA MERCHANT</b>
+                </h2>
+            </center>
+        </div>
+        <table id="tbl_uncheckednotice" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        ID_Tài khoản mới
+                    </th>
+                    <th>
+                        Người Yêu cầu
+                    </th>
+                    <th>
+                        Thời gian tạo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (!item.Checked && item.stt)
+                    {
+                        <tr onclick="window.location.href='/Admin/RegisterNotifies/Details/@item.id'">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.id_Acc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.id_Mer)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.createdDate)
+                            </td>
+
+                            <td>
+                                <span class="glyphicon glyphicon-link"></span><a asp-action="Details" asp-route-id="@item.id" class="btn-link"> Xem chi tiết</a>
+                                |
+                                <span class="glyphicon glyphicon-log-in"></span><a asp-action="CheckAsync" asp-route-id="@item.id" class="btn-link"> Thông qua</a>
+                                |
+                                <span class="glyphicon glyphicon-log-in"></span><a asp-action="AbortRequestAsync" asp-route-id="@item.id" class="btn-link"> Bác bỏ</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel panel-body panel-default">
+        <div class="title title-block">
+            <center>
+                <h2>
+                    <b>DANH SÁCH KIỂM DUYỆT TỪ PHÍA MERCHANT</b>
+                </h2>
+            </center>
+        </div>
+        <table id="tbl_notice" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        ID_Tài khoản mới
+                    </th>
+                    <th>
+                        Người Yêu cầu
+                    </th>
+                    <th>
+                        Thời gian tạo
+                    </th>
+                    <th>
+                        Trạng thái kiểm duyệt
+                    </th>
+                    <th>
+                        Xóa
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (item.stt)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.id_Acc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.id_Mer)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.createdDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Checked)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.stt)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.id">Chỉnh Sửa</a> |
+                                <a asp-action="Details" asp-route-id="@item.id">Chi tiết</a> |
+                                <a asp-action="Delete" asp-route-id="@item.id">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section setDataTable{ 
+    <script>
+       
+        $(document).ready(function () {
+            $('#tbl_notice').dataTable();
+        });
+    </script>
+}

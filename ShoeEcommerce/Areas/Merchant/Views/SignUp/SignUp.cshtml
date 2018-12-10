@@ -1,0 +1,126 @@
+﻿@model ShoeEcommerce.Model.ViewModel.Login.RegisterMerchantModelView
+
+@{
+    ViewData["Title"] = "Đăng kí tài khoản";
+    Layout = "~/Views/Share/LayoutClientDetail.cshtml";
+}
+<div class="container">
+
+    <div class="panel panel-body panel-primary">
+        <div class="row">
+
+            <div class="col-md-offset-3 col-md-6">
+
+                <center>
+
+                    <h2 class="title title-block">Thông tin đăng kí tài khoản bán hàng</h2>
+                    <hr />
+
+                </center>
+
+                @if (TempData["mes"] != null)
+                {
+                    <div class="alert alert-warning text-center">
+                        <h4> @TempData["mes"]</h4>
+                    </div>
+
+                }
+
+                <form asp-action="Signup">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="username" class="control-label">Tài khoản đăng nhập</label>
+                        <input asp-for="username" class="form-control" placeholder="Nhập tài khoản" required />
+                        <span asp-validation-for="username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="password" class="control-label">Mật khẩu</label>
+                        <input type="password" asp-for="password" class="form-control" placeholder="Nhập mật khẩu" required />
+                        <span asp-validation-for="password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="avt_path" class="control-label">Ảnh đại diện</label>
+                        <input type="file" asp-for="avt_path" class="form-control" />
+                        <span asp-validation-for="avt_path" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="panel panel-body panel-info">
+                        <div class="title title-post text-center">
+                            <h3>Thông tin khách hàng</h3>
+                            <hr />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="lstname" class="control-label">Tên khách hàng</label>
+                            <input asp-for="lstname" class="form-control" placeholder="Tên" required />
+                            <span asp-validation-for="lstname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="fstname" class="control-label">Họ</label>
+                            <input asp-for="fstname" class="form-control" placeholder="Họ" required />
+                            <span asp-validation-for="fstname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="storename" class="control-label">Tên cửa hàng</label>
+                            <input asp-for="storename" class="form-control" placeholder="Tên cửa hàng" required />
+                            <span asp-validation-for="storename" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="phone" class="control-label">Số điện thoại (*)</label>
+                            <input asp-for="phone" class="form-control" placeholder="Yều cầu nhập Sđt" required />
+                            <span asp-validation-for="phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="website" class="control-label">Website</label>
+                            <input asp-for="website" class="form-control" placeholder="Nhập website cửa hàng riêng nếu có" />
+                            <span asp-validation-for="website" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-body panel-default">
+                        <div class="text-center">
+                            <h3>Địa chỉ xác nhận</h3>
+                            <hr />
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label asp-for="add_Info" class="control-label">Số nhà (tầng)</label>
+                            <input asp-for="add_Info" class="form-control" />
+                            <span asp-validation-for="add_Info" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label asp-for="subDistrict" class="control-label">Xã</label>
+                            <input asp-for="subDistrict" class="form-control" />
+                            <span asp-validation-for="subDistrict" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label asp-for="District_town" class="control-label">Quận/huyện</label>
+                            <input asp-for="District_town" class="form-control" required />
+                            <span asp-validation-for="District_town" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label asp-for="City_Provine " class="control-label">Tỉnh/Thành phố</label>
+                            <input asp-for="City_Provine" class="form-control" required />
+                            <span asp-validation-for="City_Provine" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12">
+                            <label asp-for="email" class="control-label">Email</label>
+                            <input asp-for="email" class="form-control" required />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Đăng ký" class="btn btn-facebook btn-send pull-right" />
+                    </div>
+                </form>
+                <div class=""></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+</div>

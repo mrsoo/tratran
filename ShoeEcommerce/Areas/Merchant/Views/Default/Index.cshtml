@@ -1,0 +1,79 @@
+﻿@model ShoeEcommerce.Model.Accounts.Account
+@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+@using Microsoft.AspNetCore.Http;
+
+<p>
+    - thông báo duyệt các yêu cầu mua hàng<br />
+    - chức năng post - quản lí sản phẩm<br />
+    - xem đánh giá<br />
+</p>
+<div class="">
+    <div class="text text-success">
+        <h5><i>xin chào khách hàng <cite class="text-info">@Context.Session.GetString("username")</cite></i></h5>
+    </div>
+    <div class="panel panel-body panel-default">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <h4><label class=""><sapn class="glyphicon glyphicon-saved"></sapn> Nghiệp vụ quản trị</label></h4>
+                <div class="panel panel-body panel-default">
+                    @*content*@
+                    <!--Posting feature-->
+                    <div class="btn btn-default left" onclick="window.location.href=''">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Đăng sản phẩm
+                    </div>
+                    <!--end_Posting feature-->
+                    <div class="btn btn-default left" onclick="window.location.href=''">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        Quản lí bài đăng
+                    </div>
+                    <div class="btn btn-default left" onclick="window.location.href=''">
+                        <span class="glyphicon glyphicon-list"></span>
+                        Quản lí sản phẩm
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <h4><label class=""><span class="glyphicon glyphicon-user"></span> Thông tin tài khoản</label></h4>
+                <div class="panel panel-info">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <img class="img img-thumbnail" src="@Html.DisplayFor(model=>model.avt_path)" />
+                        </div>
+                        <div class="col-md-8 col-sm-8 text-info text-justify">
+                            <label class="label label-default">Tên tài khoản:</label>
+                            <span>  @Html.DisplayFor(model => model.username)</span>
+                            <br />
+                            <label class="label label-default">Id Tài khoản:</label>
+                            <span>  @Html.DisplayFor(model => model.idAccount)</span>
+                            <br />
+
+                            <div class="text text-info bg-primary pull-right">
+                                @if (Model.IdMerchant == "noone")
+                                {<span class="glyphicon glyphicon-user">Admin</span> }
+                                else
+                                { <span class="glyphicon glyphicon-user">Merchant</span>}
+                                <br />
+
+                            </div>
+                            @if ((bool)ViewData["curStt"] == true)
+                            {
+                                <label class="label label-warning">TK đang hoạt động</label>
+                            }
+                            else
+                            {
+                                <label class="label label-warning">TK đã bị khóa</label>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

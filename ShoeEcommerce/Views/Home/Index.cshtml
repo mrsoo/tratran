@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Share/LayoutClientDetail.cshtml";
+}
+
+@section ScriptsSlider {
+    <partial name="~/Views/Share/_Slider.cshtml" />
+}
+@*<partial name="~/Views/Share/_FeatureProduct.cshtml" />*@
+@await Component.InvokeAsync("FeatureProduct")
+@await Component.InvokeAsync("MenShoes")
+<partial name="~/Views/Share/_Television.cshtml" />
+@await Component.InvokeAsync("SaleProduct")
+@*<partial name="~/Views/Share/_Sale.cshtml" />*@

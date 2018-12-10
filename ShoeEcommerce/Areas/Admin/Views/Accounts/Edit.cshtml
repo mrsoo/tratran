@@ -1,0 +1,62 @@
+﻿@model ShoeEcommerce.Model.Accounts.Account
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idAccount" />
+            <div class="form-group">
+                <label asp-for="username" class="control-label"></label>
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="passwd" class="control-label"></label>
+                <input asp-for="passwd" class="form-control" />
+                <span asp-validation-for="passwd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="avt_path" class="control-label"></label>
+                <input asp-for="avt_path" class="form-control" />
+                <span asp-validation-for="avt_path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rate" class="control-label"></label>
+                <input asp-for="rate" class="form-control" />
+                <span asp-validation-for="rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rankVip" class="control-label"></label>
+                <input asp-for="rankVip" class="form-control" />
+                <span asp-validation-for="rankVip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdMerchant" class="control-label"></label>
+                <select asp-for="IdMerchant" class="form-control" asp-items="ViewBag.IdMerchant"></select>
+                <span asp-validation-for="IdMerchant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idCustomer" class="control-label"></label>
+                <select asp-for="idCustomer" class="form-control" asp-items="ViewBag.idCustomer"></select>
+                <span asp-validation-for="idCustomer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

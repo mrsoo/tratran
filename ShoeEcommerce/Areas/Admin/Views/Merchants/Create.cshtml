@@ -1,0 +1,51 @@
+﻿@model ShoeEcommerce.Model.Users.Merchant
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Merchant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="lstname" class="control-label"></label>
+                <input asp-for="lstname" class="form-control" />
+                <span asp-validation-for="lstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fstname" class="control-label"></label>
+                <input asp-for="fstname" class="form-control" />
+                <span asp-validation-for="fstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="storename" class="control-label"></label>
+                <input asp-for="storename" class="form-control" />
+                <span asp-validation-for="storename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone" class="control-label"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="website" class="control-label"></label>
+                <input asp-for="website" class="form-control" />
+                <span asp-validation-for="website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

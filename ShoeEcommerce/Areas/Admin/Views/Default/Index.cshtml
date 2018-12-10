@@ -1,0 +1,93 @@
+﻿@{
+
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+@using Microsoft.AspNetCore.Http;
+@model ShoeEcommerce.Model.Accounts.Account
+
+<div class="">
+    <div class="text text-success">
+        <h5><i>Xin chào quản trị viên <cite class="text-info"> @Context.Session.GetString("username")</cite></i></h5>
+    </div>
+    <div class="panel panel-body panel-default">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <h4><label class=""><sapn class="glyphicon glyphicon-saved"></sapn> Nghiệp vụ quản trị</label></h4>
+                <div class="panel panel-body panel-default">
+                    @*content*@
+                    @if (!String.IsNullOrEmpty((string)TempData["mes"]))//kiem tra quyen admin
+                    {
+                        <p>
+                            @TempData["mes"]
+                        </p>
+                        @if ((int)ViewData["numNotice"] > 0)
+                        {
+                            <button class="btn btn-primary" type="button" onclick="window.location.href='/Admin/RegisterNotifies'" disabled>
+                                <span class="glyphicon glyphicon-check"></span>
+                                Yêu cầu kiểm duyệt <span class="badge">@ViewData["numNotice"]</span>
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-default" type="button" onclick="window.location.href='/Admin/RegisterNotifies'" disabled>
+                                <span class="glyphicon glyphicon-check"></span>
+                                Yêu cầu kiểm duyệt
+                            </button>
+                        }
+                    }else
+                    if ((int)ViewData["numNotice"] > 0)//kiem tra thong bao
+                    {
+                        <button class="btn btn-primary" type="button" onclick="window.location.href='/Admin/RegisterNotifies'">
+                            <span class="glyphicon glyphicon-check"></span>
+                            Yêu cầu kiểm duyệt <span class="badge">@ViewData["numNotice"]</span>
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-default" type="button" onclick="window.location.href='/Admin/RegisterNotifies'">
+                            <span class="glyphicon glyphicon-check"></span>
+                            Yêu cầu kiểm duyệt
+                        </button>
+                    }
+
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <h4><label class=""><span class="glyphicon glyphicon-user"></span> Thông tin tài khoản</label></h4>
+                <div class="panel panel-info">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <img class="img img-thumbnail" src="@Html.DisplayFor(model=>model.avt_path)" />
+                        </div>
+                        <div class="col-md-8 col-sm-8 text-info text-justify">
+                            <label class="label label-default">Tên tài khoản:</label>
+                            <span>  @Html.DisplayFor(model => model.username)</span>
+                            <br />
+                            <label class="label label-default">Id Tài khoản:</label>
+                            <span>  @Html.DisplayFor(model => model.idAccount)</span>
+                            <br />
+                            <div class="text text-info bg-primary pull-right">
+                                @if (Model.IdMerchant == "noone")
+                                {<span class="glyphicon glyphicon-user">Admin</span> }
+                                else
+                                { <span class="glyphicon glyphicon-user">Merchant</span>}
+                                <br />
+
+                            </div>
+                            @if ((bool)ViewData["curStt"] == true)
+                            {
+                                <label class="label label-warning">TK đang hoạt động</label>
+                            }
+                            else
+                            {
+                                <label class="label label-warning">TK đã bị khóa</label>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

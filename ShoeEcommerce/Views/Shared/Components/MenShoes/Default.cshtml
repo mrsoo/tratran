@@ -1,0 +1,148 @@
+﻿@model IEnumerable<ShoeEcommerce.Model.Products.Product>
+<section id="section2">
+    <div class="container">
+        <!-- Feature Products Category-->
+        <div class="feature-products-category product-tabs">
+            <h5 class="tab-title">Giày nam</h5>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="left-tab">
+                        <figure>
+                            <img src="~/Client/assets/images/smartphone.jpg" alt="smartphone" width="268" height="579">
+                            <div class="left-tab-asblute">
+                                <p>A Keyring Does It All!</p>
+                                <h2>Wonder<span>Cube</span></h2>
+                                <a class="button bg-666" href="#">Shop Now</a>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    @await Component.InvokeAsync("Category")
+                    <div class="product-tabs-content tab-content clearfix">
+                        <div class="tab-pane active" id="1b">
+                            <!-- Giày thể thao nam -->
+                            <div class="sldide-thumbs slide-bx">
+                                <div class="thumbs">
+                                    @{
+                                        var dem = 0;
+                                        var SubModel = Model.Where(l => l.Category.nameCategory.Equals("Giày thể thao nam")).Take(3);
+                                        foreach (var item in SubModel)
+                                        {
+                                            <a data-slide-index="@dem" href=""><img src="~/Client/assets/images/sm-small1.jpg" alt="sm-big"></a>
+                                            dem++;
+                                        }
+                                    }
+
+                                </div>
+                                <div class="slide-container">
+                                    <div><img src="~/Client/assets/images/sm-big.jpg" alt="sm-big"></div>
+                                </div>
+                            </div>
+                            <!-- Slide show -->
+                            <!-- ./Slide show -->
+                        </div>
+                        <div class="tab-pane" id="2b">
+                            <!-- Giày tây -->
+                            <!-- Slide show -->
+                            <div class="slide-thumbs slide-bx">
+                                <div class="thumbs">
+                                    <a data-slide-index="0" href=""><img src="~/Client/assets/images/sm-small2.jpg" alt="sm-big"></a>
+                                    <a data-slide-index="1" href=""><img src="~/Client/assets/images/sm-small2.jpg" alt="sm-big"></a>
+                                    <a data-slide-index="2" href=""><img src="~/Client/assets/images/sm-small3.jpg" alt="sm-big"></a>
+                                </div>
+                                <div class="slide-container">
+                                    <img src="~/Client/assets/images/sm-big.jpg" alt="sm-big">
+                                    <img src="~/Client/assets/images/sm-big.jpg" alt="sm-big">
+                                    <img src="~/Client/assets/images/sm-big.jpg" alt="sm-big">
+                                </div>
+                            </div>
+                            <!-- ./Slide show -->
+                        </div>
+                        <div class="tab-pane" id="3b">
+                            <!-- Giày lười -->
+                            <!-- Slide show -->
+                            <div class="slide-thumbs slide-bx">
+                                <div class="thumbs">
+                                    <a data-slide-index="0" href=""><img src="~/Client/assets/images/sm-small2.jpg" alt="sm-big"></a>
+                                    <a data-slide-index="1" href=""><img src="~/Client/assets/images/sm-small3.jpg" alt="sm-big"></a>
+                                    <a data-slide-index="2" href=""><img src="~/Client/assets/images/sm-small3.jpg" alt="sm-big"></a>
+                                </div>
+                                <div class="slide-container">
+                                    <img src="~/Client/assets/images/sm-big.jpg" alt="sm-big">
+                                    <img src="~/Client/assets/images/sm-big.jpg" alt="sm-big">
+                                    <img src="~/Client/assets/images/sm-big.jpg" alt="sm-big">
+                                </div>
+                            </div>
+                            <!-- ./Slide show -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section3">
+    <div class="container">
+        <!-- Product list -->
+        <div class="product-list">
+            @{
+                var SubModelPro = Model.Take(5);
+                foreach (var item in SubModelPro)
+                {
+                    <div class="product-list-content">
+                        <div class="product-media">
+                            <figure><a href="#"><img src="~/Client/assets/images/p1.jpg" alt="feature" width="200" height="238"></a></figure>
+                        </div>
+                        <a href="#" class="feature-slide-name">@item.nameProduct</a>
+                        <p class="feature-slide-cost"><span class="price">@item.Price</span></p>
+                        <ul class="product-item-actions">
+                            <li><a href="#"><i class="flaticon-like"></i></a></li>
+                            <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                            <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                        </ul>
+                    </div>
+                }
+            }
+
+        </div>
+        <div class="product-list">
+            @{
+                var SubModelPro1 = Model.Skip(5);
+                foreach (var item in SubModelPro1)
+                {
+                    <div class="product-list-content">
+                        <div class="product-media">
+                            <figure><a href="#"><img src="~/Client/assets/images/p1.jpg" alt="feature" width="200" height="238"></a></figure>
+                        </div>
+                        <a href="/Home/Display/@item.idProduct" class="feature-slide-name">@item.nameProduct</a>
+                        <p class="feature-slide-cost"><span class="price">@item.Price</span></p>
+                        <ul class="product-item-actions">
+                            <li><a href="#"><i class="flaticon-like"></i></a></li>
+                            <li><a href="#"><i class="flaticon-arrows"></i></a></li>
+                            <li><a href="#"><i class="flaticon-commerce"></i></a></li>
+                        </ul>
+                    </div>
+                }
+            }
+
+        </div>
+        <!-- End .product-list -->
+    </div>
+</section>
+<section id="section4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 padding-right5">
+                <div data-wow-delay="0.6s" class="banner-text wow zoomIn">
+                    <figure><a href="#"><img alt="" src="~/Client/assets/images/banner-text1.jpg"></a></figure>
+                </div>
+            </div>
+            <div class="col-sm-6 padding-left5">
+                <div data-wow-delay="0.6s" class="banner-text wow zoomIn">
+                    <figure><a href="#"><img alt="" src="~/Client/assets/images/banner-text2.jpg"></a></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

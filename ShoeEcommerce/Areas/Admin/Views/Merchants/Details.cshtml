@@ -1,0 +1,49 @@
+﻿@model ShoeEcommerce.Model.Users.Merchant
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Merchant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.lstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.storename)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.storename)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.website)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.website)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idMerchant">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

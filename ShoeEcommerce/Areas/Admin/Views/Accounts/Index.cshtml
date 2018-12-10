@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ShoeEcommerce.Model.Accounts.Account>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avt_path)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rankVip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Merchant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passwd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avt_path)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rankVip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Merchant.idMerchant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.idCustomer)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idAccount">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idAccount">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idAccount">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

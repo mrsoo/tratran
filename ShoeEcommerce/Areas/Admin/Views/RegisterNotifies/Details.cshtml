@@ -1,0 +1,113 @@
+﻿@model ShoeEcommerce.Model.AdminManager.RegisterNotify;
+@using ShoeEcommerce.Model.Accounts;
+@using ShoeEcommerce.Model.Users;
+@{
+    ViewData["Title"] = "Chi tiết";
+    Layout = "~/Areas/Admin/Views/Share/LayoutAdmin.cshtml";
+
+}
+
+<div class="panel panel-body panel-default">
+
+    <div class="row">
+        <h3 class="text text-uppercase text-center text-info">Thông tin yêu cầu id @Html.DisplayFor(model => model.id)</h3>
+        <hr />
+        <div class="col-md-3 col-sm-3">
+            <div class="panel panel-body panel-primary">
+                <div class="text-center">
+                    <h4 class="text text-primary">THÔNG TIN YÊU CẦU</h4>
+                    <hr />
+                </div>
+                <div class="content">
+                    <div class="text-justify  text-center">
+                        <b class="text text-bold">Id Tài khoản: </b> @Html.DisplayFor(model => model.id_Acc)<br />
+
+                        <b class="text text-bold">Id MerChant: </b> @Html.DisplayFor(model => model.id_Mer)<br />
+                        <b class="text text-bold">Ngày tạo: </b>    @Html.DisplayFor(model => model.createdDate)<br />
+
+                        <b class="text text-bold">Trạng thái kiểm duyệt: </b>
+                        @Html.DisplayFor(model => model.Checked)<br />
+                        <b class="text text-bold">Trạng thái: </b>
+                        @Html.DisplayFor(model => model.stt)<br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-body panel-info">
+                <div class="text-center">
+                    <h4 class="text text-primary">THÔNG TIN MERCHANT</h4>
+                    <hr />
+                </div>
+                <div class="content">
+                    <div class="text text-justify  text-center">
+                        @{
+                            var mer = TempData["mer"] as Merchant;
+                            <b class="text text-bold"> Tên: </b> @mer.lstname <br />
+                            <b class="text text-bold"> Họ: </b> @mer.fstname <br />
+                            <b class="text text-bold"> Id Merchant: </b> @mer.idMerchant <br />
+                            <b class="text text-bold"> Số điện thoại: </b> @mer.phone <br />
+                            <b class="text text-bold"> Tên cửa hàng: </b> @mer.storename <br />
+                            <b class="text text-bold"> Website: </b> @mer.website <br />
+                        }
+                    </div>
+                    <div class="panel panel-body panel-success">
+                        <label class="panel panel-title">Hình ảnh của cửa hàng</label><br />
+                        <div class="">
+                            @if (mer.Link_ImgStores.Count() > 0)
+                            {
+                                foreach (var item in mer.Link_ImgStores)
+                                {
+                                    <img class="img img-rounded" src="@item.path" />
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-5">
+            <div class="panel panel-body panel-default">
+                <div class="text-center">
+                    <h4 class="text text-primary">THÔNG TIN TÀI KHOẢN</h4>
+                    <hr />
+                </div>
+                <div class="content">
+                    <div class="text text-justify  text-center">
+                        @{
+                            var acc = TempData["acc"] as Account;
+                            <center><img class="img img-circle" src="@acc.avt_path" /></center>
+                            <div class="clearfix"><hr /></div>
+                            <b class="text text-bold"> Tên đăng nhập: </b> @acc.username <br />
+                            <b class="text text-bold"> Ngày tạo: </b> @acc.CreatedDate <br />
+                            <b class="text text-bold"> Id tài khoản: </b> @acc.idAccount <br />
+                            <b class="text text-bold"> Id Merchant: </b> @acc.IdMerchant <br />
+                            <b class="text text-bold"> Rating: </b> @acc.rate <br />
+                            <b class="text text-bold"> Rank: </b> @acc.rankVip <br />
+                            <b class="text text-bold"> Trạng thái: </b> @acc.stt<br />
+                            foreach (var item in acc.Emails)
+                            {
+                                int i = 1;
+                                <b class="text text-bold"> Email @i: </b> @item.email <br />
+                                i++;
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (!Model.Checked)
+    {
+        <button class="btn btn-lg btn-warning pull-right" onclick="window.location.href='/Admin/RegisterNotifies/AbortRequestAsync/@Model.id'"> Bác bỏ</button>
+
+        <button class="btn btn-lg btn-info pull-right" onclick="window.location.href='/Admin/RegisterNotifies/CheckAsync/@Model.id'"> Thông qua</button>
+    }
+
+    <div class="pull-left">
+
+        <a asp-action="Edit" asp-route-id="@Model.id">Chỉnh sửa</a> |
+        <a asp-action="Index">Về danh sách</a>
+    </div>
+</div>
